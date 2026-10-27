@@ -1,0 +1,25 @@
+# secrets and personal data — never commit
+cookies.txt
+*.cookies.txt
+config.yaml
+answers*.json
+!answers.example.json
+
+# generated artifacts
+out/
+.cache/
+*.log
+*.png
+*.pdf
+*.ttf
+*.otf
+!assets/.gitkeep
+
+# python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.egg-info/

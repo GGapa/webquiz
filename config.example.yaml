@@ -1,0 +1,28 @@
+# Copy to config.yaml and fill in your own values.
+# Never commit config.yaml, cookies.txt or answers.json.
+
+course:
+  # The studentstudy URL of the course. Copy it from the browser after opening
+  # the course; chapterId can be any section of the course.
+  main_url: "https://mooc1.chaoxing.com/mycourse/studentstudy?chapterId=REPLACE&courseId=REPLACE&clazzid=REPLACE&cpi=REPLACE&enc=REPLACE&mooc2=1&hidetype=0&fanyaVersion=0&openc=REPLACE"
+
+  # Raw Cookie header ("a=1; b=2") or a JSON cookie array.
+  cookie_file: "cookies.txt"
+
+  # auto | sidebar | embedded
+  #   sidebar  = quizzes are their own entries in the left catalog
+  #   embedded = every section contains a video + quiz
+  mode: auto
+
+browser:
+  channel: chrome      # use the installed Chrome; do NOT download Chromium
+  headless: false
+  slow_mo_ms: 0
+
+font:
+  # SourceHanSansSC-Normal.otf. Run scripts/fetch_reference_font.py to download.
+  reference_otf: "assets/SourceHanSansSC-Normal.otf"
+  cache: ".cache/cand_matrix.npz"
+
+output:
+  dir: "out"

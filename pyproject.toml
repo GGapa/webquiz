@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "webquiz"
+version = "0.1.0"
+description = "Local-first automation helper for Chaoxing/超星 chapter quizzes and homework"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+  "playwright>=1.40",
+  "fonttools>=4.40",
+  "pillow>=10.0",
+  "numpy>=1.24",
+  "beautifulsoup4>=4.12",
+  "lxml>=4.9",
+  "PyYAML>=6.0",
+]
+
+[project.scripts]
+webquiz = "webquiz.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["webquiz*"]
