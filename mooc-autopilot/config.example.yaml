@@ -1,0 +1,48 @@
+# 复制成 config.yaml 后填写；config.yaml / cookies.txt / answers.json 都不要提交到 git。
+
+# ───────────────────────────── 超星学习通 ─────────────────────────────
+course:
+  # 在浏览器打开课程后，把地址栏里 studentstudy?chapterId=... 整段原样粘进来
+  # （保留 & = 等符号）。chapterId 随便挑一个小节，程序会按它逐个遍历。
+  main_url: "https://mooc1.chaoxing.com/mycourse/studentstudy?chapterId=REPLACE&courseId=REPLACE&clazzid=REPLACE&cpi=REPLACE&enc=REPLACE&mooc2=1&hidetype=0&fanyaVersion=0&openc=REPLACE"
+
+  # Cookie：浏览器开发者工具里复制的整段 Cookie 头，或 JSON 数组
+  cookie_file: "cookies.txt"
+
+  # auto | sidebar | embedded
+  #   sidebar  = 测验是左侧目录里的独立条目
+  #   embedded = 每一节里都嵌着视频 + 测验
+  mode: auto
+
+# ─────────────────────────── 中国大学MOOC ───────────────────────────
+icourse163:
+  # 课程名 -> 课程「课件」页链接（不是首页，要 #/learn/content 那个）
+  courses:
+    示例课程: "https://www.icourse163.org/learn/XXX-1234567#/learn/content"
+    # SPOC 课程长这样：
+    # 示例SPOC: "https://www.icourse163.org/spoc/learn/XXX-7654321#/learn/content"
+
+# ───────────────────────────── 浏览器 ─────────────────────────────
+browser:
+  cdp_url: "http://127.0.0.1:9222"
+  # 用本机已装的 Chrome/Edge 接管，不下载 Chromium
+  channel: chrome
+  headless: false
+  slow_mo_ms: 0
+
+# ─────────────────────────── 字体解码（超星） ───────────────────────────
+font:
+  reference_otf: "assets/SourceHanSansSC-Normal.otf"
+  cache: ".cache/cand_matrix.npz"
+
+# ─────────────────────────── 大模型答题（可选） ───────────────────────────
+llm:
+  # 不填就只能"人工填答案"，脚本不会自己答
+  provider: deepseek
+  base_url: "https://api.deepseek.com/chat/completions"
+  model: "deepseek-chat"
+  # 密钥放环境变量，别写进配置文件
+  api_key_env: "DEEPSEEK_API_KEY"
+
+output:
+  dir: "out"

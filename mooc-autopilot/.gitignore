@@ -1,0 +1,24 @@
+﻿# 私有数据，绝不提交
+config.yaml
+cookies.txt
+answers.json
+*.cookies.json
+.env
+*.env
+
+# 运行产物
+out/
+.cache/
+assets/SourceHanSansSC-Normal.otf
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 浏览器调试配置（体积大且含 Cookie）
+.edge-debug/
+.tmp/
+
